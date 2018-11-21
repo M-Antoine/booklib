@@ -21,16 +21,13 @@ class DefaultController extends BaseController
      */
     public function index(string $nom, Request $request)
     {
-        $author = $this->getDoctrine()->getRepository(Author::class)->findOneByLastname($nom);
+        $author = $this->getDoctrine()->getRepository(Author::class)->findOneBy(["lastname" => $nom]);
 
         if (!$author) {
             throw $this->createNotFoundException("Auteur introuvable!");
         }
 
-        $request->query->get('');
-        ;die;
-
-        return new Response($author->getFirstname() . " " . $author->getLastname());
+        return $this->render("default/index.html.twig", ["author" => $author]);
     }
 
     /**

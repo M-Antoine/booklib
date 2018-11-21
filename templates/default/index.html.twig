@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block header %}
+    <header>
+        HEADER index
+    </header>
+{% endblock %}
+
+
+{% block body %}
+
+    <h1>{{ author.fullname }}</h1>
+
+    <h2>Liste des livres :</h2>
+
+    <ul>
+        {% for book in author.book %}
+             <li>
+                 <a href="{{ path('book_show', {'slug': book.slug}) }}">
+                     {{ book.title }}
+                 </a>
+             </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
