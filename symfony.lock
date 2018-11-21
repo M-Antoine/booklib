@@ -140,6 +140,15 @@
     "symfony/debug": {
         "version": "v4.1.7"
     },
+    "symfony/debug-bundle": {
+        "version": "4.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.1",
+            "ref": "f8863cbad2f2e58c4b65fa1eac892ab189971bea"
+        }
+    },
     "symfony/dependency-injection": {
         "version": "v4.1.7"
     },
@@ -249,6 +258,15 @@
             "branch": "master",
             "version": "3.3",
             "ref": "dae9b39fd6717970be7601101ce5aa960bf53d9a"
+        }
+    },
+    "symfony/webpack-encore-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "dd76e869a5d10fac29f4c0c02f8feaac613471ff"
         }
     },
     "symfony/yaml": {
