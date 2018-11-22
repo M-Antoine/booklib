@@ -11,11 +11,14 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 
-.idea/
-*.bak
+
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
 /public/build/
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+.idea/
+*.bak
+/public/uploads/

@@ -5,44 +5,42 @@
 
 {% block body %}
 
-    {{ dump(book) }}
+    <section class="container">
+        <h1>{{ book.title }}</h1>
 
-    <h1>{{ book.title }}</h1>
+        <img src="{{ asset('uploads/') ~ book.image }}" alt="{{ book.title }}">
 
-    <img src="{{ asset('uploads/') ~ book.image }}" alt="{{ book.title }}">
-
-    <p>Auteur : {{ book.author.fullname }}</p>
+        <p>Auteur : {{ book.author.fullname }}</p>
 
 
-    <p>Crée le : {{ book.createdAt|date("d m y") }}</p>
+        <p>Crée le : {{ book.createdAt|date("d m y") }}</p>
 
-    <p>Référence : {{ book.reference }}</p>
+        <p>Référence : {{ book.reference }}</p>
 
-    <h2>Listes des catégories du livre</h2>
-    <ul>
-        {% for category in book.category %}
-            <li>
-                <a href="{{ path('category_show', {'id': category.id}) }}">
+        <h2>Listes des catégories du livre</h2>
+        <ul>
+            {% for category in book.category %}
+                <li>
+                    <a href="{{ path('category_show', {'id': category.id}) }}">
                         {{ category.name }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
 
-    <h2>Liste des livres du même auteur</h2>
+        <h2>Liste des livres du même auteur</h2>
 
 
+        <div class="row">
+            {% for otherbook in otherbooks %}
+                <div class="col-md-3">
+                    {% include 'book/card.html.twig' with {'book': otherbook} only %}
+                </div>
+            {% else %}
+                <article>Aucun autre livre</article>
+            {% endfor %}
+        </div>
 
-    <ul>
-        {% for otherbook in otherbooks %}
-            <li>
-                <a href="{{ path('book_show', {'slug': otherbook.slug}) }}">
-                    {{ otherbook.title }}
-                </a>
-            </li>
-        {% else %}
-            <li>Aucun autre livre</li>
-        {% endfor %}
-    </ul>
+    </section>
 
 {% endblock %}
