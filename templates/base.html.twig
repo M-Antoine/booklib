@@ -33,13 +33,17 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
                                aria-expanded="false">Catégories <span class="caret"></span></a>
-                            {{  render(controller('App\\Controller\\CategoryController::dropdown')) }}
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Roman</a></li>
-                                <li><a class="dropdown-item" href="#">SF</a></li>
-                                <li><a class="dropdown-item" href="#">Histoire</a></li>
-                                <li><a class="dropdown-item" href="#">Thriller</a></li>
-                            </ul>
+                            {{ render(controller('App\\Controller\\CategoryController::dropdown')) }}
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('author_new') }}" class="nav-link">
+                                Ajouter un auteur
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('box_index') }}" class="nav-link">
+                                Afficher les boites
+                            </a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Box index{% endblock %}
+
+{% block body %}
+    <section class="mt-4">
+    <h1>Box index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Address</th>
+                <th>ZipCode</th>
+                <th>City</th>
+                <th>Comment</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for box in boxes %}
+            <tr>
+                <td>{{ box.id }}</td>
+                <td>{{ box.latitude }}</td>
+                <td>{{ box.longitude }}</td>
+                <td>{{ box.address }}</td>
+                <td>{{ box.zipCode }}</td>
+                <td>{{ box.city }}</td>
+                <td>{{ box.comment }}</td>
+                <td>
+                    <a href="{{ path('box_show', {'id': box.id}) }}">show</a>
+                    <a href="{{ path('box_edit', {'id': box.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('box_new') }}">Create new</a>
+    </section>
+{% endblock %}
