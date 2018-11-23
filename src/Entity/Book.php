@@ -248,4 +248,9 @@ class Book
     {
         $this->setCreatedAt(new \DateTime());
     }
+
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

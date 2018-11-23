@@ -1,0 +1,16 @@
+easy_admin:
+    site_name: 'Booklib'
+    entities:
+        #Author:
+          #  class: App\Entity\Author
+          #  label: 'Auteur'
+          #  list:
+              #  title: 'Liste des auteurs'
+
+
+                    - App\Entity\Author
+                    - App\Entity\Book
+                    - App\Entity\Box
+                    - App\Entity\User
+                    - App\Entity\Category
+                    - App\Entity\Borrow
